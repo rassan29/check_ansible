@@ -4,7 +4,7 @@
   gather_facts: no
   tasks:
   - name: Going to merge change.txt to running-config
-    cisco.ios.ios_config:
+    ios_config:
       diff_against: running
       src: /etc/ansible/backup/CISCOLAB_config.2023-05-18@20:42:57
     register: test_diff
@@ -14,7 +14,7 @@
       var: test_diff.updates
 
   - name: Going to merge change.txt to startup-config
-    cisco.ios.ios_config:
+    ios_config:
       diff_against: startup
       src: /etc/ansible/backup/CISCOLAB_config.2023-05-18@20:42:57
     register: test_diff2
