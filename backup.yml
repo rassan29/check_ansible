@@ -1,0 +1,18 @@
+---
+- hosts: all
+  connection: local
+  gather_facts: no
+#  vars:
+#    provider:
+#      username: "admin"
+#      password: "Bullf00d"
+  tasks:
+  - name: Obter informações dos dispositivos
+    cisco.ios.ios_facts:
+  
+  - name: create a backup
+    cisco.ios.ios_config:
+      backup: yes
+      backup_options: 
+#        filename: '{{ansible_net_hostname}}'
+      
