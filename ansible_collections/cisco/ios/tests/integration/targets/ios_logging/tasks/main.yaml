@@ -1,0 +1,3 @@
+---
+- name: Main task for logging module
+  ansible.builtin.include_tasks: cli.yaml
